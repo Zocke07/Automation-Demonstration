@@ -1,0 +1,4 @@
+*** Settings ***
+Resource    ./TAD-001.txt
+Resource    ./TCD-001.txt
+Resource    ./TCD-002.txt

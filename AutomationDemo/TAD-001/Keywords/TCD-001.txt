@@ -1,0 +1,21 @@
+*** Settings ***
+Library    SeleniumLibrary
+Resource    ../../Resources/Variables.txt
+
+*** Keywords ***
+Open Browser To Login Page
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    ${DELAY}
+    Login Page Should Be Open
+
+Login Page Should Be Open
+    Title Should Be    Login Page
+
+Go To Login Page
+    Go To    ${LOGIN URL}
+    Login Page Should Be Open
+
+Welcome Page Should Be Open
+    Location Should Be    ${WELCOME URL}
+    Title Should Be    Welcome Page

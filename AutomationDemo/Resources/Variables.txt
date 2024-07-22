@@ -1,0 +1,10 @@
+*** Variables ***
+${SERVER} =    localhost:${PORT}
+${PORT} =    7272
+${BROWSER} =    Chrome
+${DELAY} =    0.5
+${VALID USER} =    demo
+${VALID PASSWORD} =    mode
+${LOGIN URL} =    http://${SERVER}/
+${WELCOME URL} =    http://${SERVER}/welcome.html
+${ERROR URL} =    http://${SERVER}/error.html

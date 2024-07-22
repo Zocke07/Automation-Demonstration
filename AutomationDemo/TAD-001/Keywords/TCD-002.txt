@@ -1,0 +1,17 @@
+*** Settings ***
+Library    SeleniumLibrary
+Resource    ../../Resources/Variables.txt
+Resource    TAD-001.txt
+
+*** Keywords ***
+Login With Invalid Credentials Should Fail
+    [Arguments]    ${username}    ${password}
+    Input Username    ${username}
+    Input Password    ${password}
+    Submit Credentials
+    Login Should Have Failed
+    Click Button    tryagain_button
+
+Login Should Have Failed
+    Location Should Be    ${ERROR URL}
+    Title Should Be    Error Page
