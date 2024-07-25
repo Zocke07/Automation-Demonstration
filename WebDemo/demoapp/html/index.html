@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,25 @@
   <link href="css/demo.css" media="all" rel="stylesheet" type="text/css">
   <script src="js/scripts.js" defer></script>
 </head>
+
 <body>
   <div id="container">
-    <h1>Login Page</h1>
-    <p>Please input your user name and password and click the login button.</p>
-    <form name="login_form" onsubmit="return login(event);">
-      <label for="username_field">User Name:</label>
-      <input id="username_field" name="username" size="30" type="text" placeholder="Enter your username">
-      <label for="password_field">Password:</label>
-      <input id="password_field" name="password" size="30" type="password" placeholder="Enter your password">
-      <input id="login_button" type="submit" value="LOGIN">
+    <h1 id="login-title">Login Page</h1>
+    <p id="login-description">Please input your user name and password and click the login button.</p>
+    <form id="login_form" class="form" name="login_form" onsubmit="return login(event);">
+      <div class="form-group">
+        <label for="username_field" class="form-label">User Name:</label>
+        <input id="username_field" class="form-input" name="username" size="30" type="text" placeholder="Enter your username">
+      </div>
+      <div class="form-group">
+        <label for="password_field" class="form-label">Password:</label>
+        <input id="password_field" class="form-input" name="password" size="30" type="password" placeholder="Enter your password">
+      </div>
+      <div class="form-group">
+        <input id="login_button" class="form-button" type="submit" value="LOGIN">
+      </div>
     </form>
   </div>
 </body>
+
 </html>
