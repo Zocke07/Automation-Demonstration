@@ -4,7 +4,7 @@ Resource    ../../Resources/Variables.txt
 
 *** Keywords ***
 Open Browser To Login Page
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Open Browser    ${login_url}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
@@ -13,9 +13,9 @@ Login Page Should Be Open
     Title Should Be    Login Page
 
 Go To Login Page
-    Go To    ${LOGIN URL}
+    Go To    ${login_url}
     Login Page Should Be Open
 
 Welcome Page Should Be Open
-    Location Should Be    ${WELCOME URL}
+    Location Should Be    ${welcome_url}
     Title Should Be    Welcome Page

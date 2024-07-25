@@ -15,12 +15,11 @@ Valid Login
     Input Password    mode
     Submit Credentials
     Welcome Page Should Be Open
+    [Teardown]    Click Logout Button
 
 Invalid Login
     [Tags]    TCD-002
-    Login With Invalid Credentials Should Fail    invalid    ${VALID PASSWORD}
-    Login With Invalid Credentials Should Fail    ${VALID USER}    invalid
-    Login With Invalid Credentials Should Fail    invalid    whatever
-    Login With Invalid Credentials Should Fail    ${EMPTY}    ${VALID PASSWORD}
-    Login With Invalid Credentials Should Fail    ${VALID USER}    ${EMPTY}
-    Login With Invalid Credentials Should Fail    ${EMPTY}    ${EMPTY}
+    Verify Login With Invalid Username Fails
+    Verify Login With Invalid Password Fails
+    Verify Login With Invalid Username And Password Fails
+    [Teardown]    Click Try Again Button

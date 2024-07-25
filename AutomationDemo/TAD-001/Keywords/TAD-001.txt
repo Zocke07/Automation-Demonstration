@@ -13,3 +13,6 @@ Input Password
 
 Submit Credentials
     Click Button    login_button
+
+Click Logout Button
+    Click Button    logout-button
