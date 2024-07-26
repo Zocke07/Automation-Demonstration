@@ -1,0 +1,2 @@
+*** Settings ***
+Resource    ./TCD-011.txt

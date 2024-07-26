@@ -1,0 +1,26 @@
+*** Settings ***
+Library    SeleniumLibrary
+
+*** Keywords ***
+Input User Profile
+    Input Name    Name Example
+    Input Email    example@email.com
+    Input Bio    Hello everyone
+
+Input Name
+    [Arguments]    ${name}
+    Input Text    profile-name    ${name}
+
+Input Email
+    [Arguments]    ${email}
+    Input Text    profile-email    ${email}
+
+Input Bio
+    [Arguments]    ${bio}
+    Input Text    profile-bio    ${bio}
+
+Click Update Profile Button
+    Click Button    //input[@value='Update Profile']
+
+Verify Profile Is Updated
+    Alert Should Be Present    Profile updated successfully!

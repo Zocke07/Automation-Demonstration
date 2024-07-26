@@ -6,5 +6,4 @@ ${DELAY} =    0.5
 ${valid_username} =    demo
 ${valid_password} =    mode
 ${login_url} =    http://${SERVER}/
-${welcome_url} =    http://${SERVER}/welcome.html
 ${error_url} =    http://${SERVER}/error.html

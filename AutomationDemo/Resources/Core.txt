@@ -1,0 +1,51 @@
+*** Settings ***
+Library    SeleniumLibrary
+Resource    Variables.txt
+
+*** Keywords ***
+Open Browser To Login Page
+    Open Browser    ${login_url}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    ${DELAY}
+    Login Page Should Be Open
+
+Input Username
+    [Arguments]    ${username}
+    Input Text    username_field    ${username}
+
+Input Password
+    [Arguments]    ${password}
+    Input Text    password_field    ${password}
+
+Submit Credentials
+    Click Button    login_button
+
+Login As User
+    Input Username    demo
+    Input Password    mode
+    Submit Credentials
+
+Click Logout Button
+    Click Button    logout-button
+    Login Page Should Be Open
+
+Click Try Again Button
+    Click Button     tryagain-button
+    Login Page Should Be Open
+
+Click User Profile Button
+    Click Button    profile-button
+    User Profile Page Should Be Open
+
+Click Back To Welcome Button
+    Click Button    back-to-welcome
+    Welcome Page Should Be Open
+
+Login Page Should Be Open
+    Title Should Be    Login Page
+
+Welcome Page Should Be Open
+    Title Should Be    Welcome Page
+
+User Profile Page Should Be Open
+    Title Should Be    User Profile

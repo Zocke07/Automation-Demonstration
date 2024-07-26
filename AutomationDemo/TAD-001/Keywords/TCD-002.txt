@@ -1,7 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../../Resources/Core.txt
 Resource    ../../Resources/Variables.txt
-Resource    TAD-001.txt
+Resource    TCD-001.txt
 
 *** Keywords ***
 Verify Login With Invalid Username Fails
@@ -11,19 +12,10 @@ Verify Login With Invalid Username Fails
     Login With Credentials    ${EMPTY}    ${valid_password}
     Login Should Fail
     Click Try Again Button
-    
-Login With Credentials
-    [Arguments]    ${username}    ${password}
-    Input Username    ${username}
-    Input Password    ${password}
-    Submit Credentials
 
 Login Should Fail
     Location Should Be    ${error_url}
     Title Should Be    Error Page
-
-Click Try Again Button
-    Click Button     tryagain-button
 
 Verify Login With Invalid Password Fails
     Login With Credentials    ${valid_username}    invalid

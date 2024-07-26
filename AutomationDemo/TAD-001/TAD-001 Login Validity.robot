@@ -1,9 +1,6 @@
 *** Settings ***
-Documentation    A test suite with a single test for valid login.
-...
-...              This test has a workflow that is created using keywords in
-...              the imported resource file.
-Resource    ./Keywords/TestCases.txt
+Resource    ../Resources/Core.txt
+Resource    Keywords/TestCases.txt
 
 Suite Setup       Open Browser To Login Page
 Suite Teardown    Close Browser
@@ -11,9 +8,7 @@ Suite Teardown    Close Browser
 *** Test Cases ***
 Valid Login
     [Tags]    TCD-001
-    Input Username    demo
-    Input Password    mode
-    Submit Credentials
+    Login With Credentials    demo    mode
     Welcome Page Should Be Open
     [Teardown]    Click Logout Button
 

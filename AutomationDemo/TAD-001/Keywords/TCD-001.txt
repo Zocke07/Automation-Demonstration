@@ -1,21 +1,11 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../../Resources/Core.txt
 Resource    ../../Resources/Variables.txt
 
 *** Keywords ***
-Open Browser To Login Page
-    Open Browser    ${login_url}    ${BROWSER}
-    Maximize Browser Window
-    Set Selenium Speed    ${DELAY}
-    Login Page Should Be Open
-
-Login Page Should Be Open
-    Title Should Be    Login Page
-
-Go To Login Page
-    Go To    ${login_url}
-    Login Page Should Be Open
-
-Welcome Page Should Be Open
-    Location Should Be    ${welcome_url}
-    Title Should Be    Welcome Page
+Login With Credentials
+    [Arguments]    ${username}    ${password}
+    Input Username    ${username}
+    Input Password    ${password}
+    Submit Credentials
