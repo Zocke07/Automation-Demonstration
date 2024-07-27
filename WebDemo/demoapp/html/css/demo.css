@@ -88,6 +88,7 @@ p {
     background: #616568;
 }
 
+/* Used as upload file simulation */
 #progress-bar-container {
     background-color: #f3f3f3;
     border: 1px solid #ccc;
@@ -116,4 +117,28 @@ p {
 #upload-complete {
     font-weight: bold;
     color: #4CAF50;
+}
+
+/* Add borders to the table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-header, .table-data {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table-header {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tr:hover {
+    background-color: #ddd;
 }

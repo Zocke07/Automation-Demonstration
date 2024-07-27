@@ -1,12 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Display the username on the welcome page
-    const username = sessionStorage.getItem('username') || 'Guest';
-    const usernameDisplay = document.getElementById('username_display');
-    if (usernameDisplay) {
-        usernameDisplay.textContent = username;
-    }
-});
-
 // Login function
 function login(event) {
     event.preventDefault();
@@ -22,16 +13,15 @@ function login(event) {
 }
 
 // Update Profile
-function updateProfile() {
-    const name = document.querySelector('#name').value;
-    const email = document.querySelector('#email').value;
-    const phone = document.querySelector('#phone').value;
-    alert(`Profile Updated:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`);
-}
-
-// Show Alert
-function showAlert() {
-    alert('This is a test alert!');
+function updateProfile(event) {
+    event.preventDefault();
+    const name = document.querySelector('#profile-name').value;
+    const email = document.querySelector('#profile-email').value;
+    alert(`Profile updated with name: ${name} and email: ${email}`);
+    // Clear fields
+    document.querySelector('#profile-name').value = '';
+    document.querySelector('#profile-email').value = '';
+    document.querySelector('#profile-bio').value = '';
 }
 
 // Upload File
@@ -69,9 +59,3 @@ function simulateFileUpload(event) {
       alert('Please select a file to upload.');
     }
   }
-
-// Logout Function
-function logout() {
-    sessionStorage.removeItem('username');
-    window.location = 'index.html';
-}

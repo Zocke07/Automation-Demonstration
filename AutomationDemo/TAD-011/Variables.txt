@@ -1,0 +1,4 @@
+*** Variables ***
+${updateName} =    Name Example
+${updateEmail} =    example@email.com
+${updateBio} =    Hello everyone
