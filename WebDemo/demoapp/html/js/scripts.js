@@ -35,14 +35,40 @@ function showAlert() {
 }
 
 // Upload File
-function uploadFile() {
-    const fileInput = document.querySelector('#file_input');
+function simulateFileUpload(event) {
+    event.preventDefault(); // Prevent form from submitting the traditional way
+
+    const fileInput = document.getElementById('file_input');
+    const uploadStatus = document.getElementById('upload_status');
+
     if (fileInput.files.length > 0) {
-        alert(`File ${fileInput.files[0].name} uploaded successfully!`);
+      const file = fileInput.files[0];
+
+      // Simulate a file upload delay with a progress bar
+      let progress = 0;
+      uploadStatus.innerHTML = `
+        <p id="uploading-file-info">Uploading: ${file.name} (${(file.size / 1024).toFixed(2)} KB)</p>
+        <div id="progress-bar-container" class="progress-bar-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+      `;
+
+      const progressBar = document.getElementById('progress-bar');
+
+      const uploadSimulation = setInterval(() => {
+        if (progress < 100) {
+          progress += 5; // Increase progress
+          progressBar.style.width = progress + '%'; // Update progress bar width
+        } else {
+          clearInterval(uploadSimulation);
+          alert('File uploaded successfully!');
+          uploadStatus.innerHTML = '<p id="upload-complete">Upload complete!</p>';
+        }
+      }, 100); // Update progress every 100 ms
     } else {
-        alert('No file selected.');
+      alert('Please select a file to upload.');
     }
-}
+  }
 
 // Logout Function
 function logout() {
