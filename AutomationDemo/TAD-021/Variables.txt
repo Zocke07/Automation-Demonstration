@@ -1,0 +1,2 @@
+*** Variables ***
+${testFilePath} =    D:/Z/Tugas/Automation/Program/AutomationDemo/Resources/Test.txt

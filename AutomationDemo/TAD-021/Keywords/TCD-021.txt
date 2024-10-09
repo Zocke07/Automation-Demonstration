@@ -1,0 +1,32 @@
+*** Settings ***
+Library    SeleniumLibrary
+Resource    ../Variables.txt
+
+*** Keywords ***
+Choose File To Upload
+    ${chooseFileButton} =    Set Variable    //*[@id='upload_form']//*[contains(@class, 'form-group')]//*[@id='file_input']
+    Wait Until Element Is Visible    ${chooseFileButton}
+    Choose File    ${chooseFileButton}    ${testFilePath}
+
+Click Choose File Button
+    ${uploadButton} =    Set Variable    //*[@id='upload_form']//*[contains(@class, 'form-group')]//*[@id='file_input']
+    Wait Until Element Is Visible    ${uploadButton}
+    Click Element    ${uploadButton}
+
+Click Upload Button
+    ${uploadButton} =    Set Variable    //*[@id='upload_form']//*[contains(@class, 'form-group')]//*[@type='submit']
+    Wait Until Element Is Visible    ${uploadButton}
+    Click Button    ${uploadButton}
+
+Verify File Is Uploaded Successfully
+    Progress Bar Should Be Visible
+    Alert Should Be Present    File uploaded successfully!
+    Upload Complete Message Should Be Visible
+
+Progress Bar Should Be Visible
+    ${progressBar} =    Set Variable    //*[@id='upload_status']//*[contains(@class, 'progress-bar-container')]
+    Wait Until Element Is Visible    ${progressBar}
+
+Upload Complete Message Should Be Visible
+    ${progressBar} =    Set Variable    //*[(@id='upload_status')]//*[(@id='upload-complete') and (normalize-space()='Upload complete!')]
+    Wait Until Element Is Visible    ${progressBar}
