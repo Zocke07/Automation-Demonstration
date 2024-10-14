@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     color: black;
-    background: #DDDDDD;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
     margin: 0;
     padding: 0;
     display: flex;
@@ -15,8 +15,11 @@ body {
     padding: 2em;
     background: white;
     border: 1px solid gray;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 0.5s forwards;
 }
 
 h1 {
@@ -54,18 +57,24 @@ p {
     border-radius: 4px;
 }
 
+.form-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
 .form-button {
-    padding: 0.7em;
+    padding: 0.9em;
     color: white;
-    background: #333;
+    background: linear-gradient(135deg, #333, #3a3a50);
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
 .form-button:hover {
-    background: #555;
+    background: linear-gradient(135deg, #333, #3b3b55);
 }
 
 .button-group {
@@ -86,6 +95,10 @@ p {
 
 .button:hover {
     background: #616568;
+}
+
+#profile-form {
+    margin-bottom: 10px;
 }
 
 /* Used as upload file simulation */
@@ -119,26 +132,9 @@ p {
     color: #4CAF50;
 }
 
-/* Add borders to the table */
-.table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.table-header, .table-data {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-.table-header {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-.table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.table tr:hover {
-    background-color: #ddd;
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
