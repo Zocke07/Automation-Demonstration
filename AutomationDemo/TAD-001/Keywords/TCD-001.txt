@@ -9,3 +9,6 @@ Login With Credentials
     Input Username    ${username}
     Input Password    ${password}
     Submit Credentials
+
+Verify Welcome Page Is Visible
+    Welcome Page Should Be Open

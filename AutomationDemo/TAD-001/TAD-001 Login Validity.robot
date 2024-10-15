@@ -9,7 +9,7 @@ Suite Teardown    Close Browser
 Valid Login
     [Tags]    TCD-001
     Login With Credentials    demo    mode
-    Welcome Page Should Be Open
+    Verify Welcome Page Is Visible
     [Teardown]    Click Logout Button
 
 Invalid Login
