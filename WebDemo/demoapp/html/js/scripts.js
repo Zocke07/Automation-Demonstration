@@ -14,14 +14,21 @@ function login(event) {
 
 // Update Profile
 function updateProfile(event) {
-    event.preventDefault();
-    const name = document.querySelector('#profile-name').value;
-    const email = document.querySelector('#profile-email').value;
-    alert(`Profile updated with name: ${name} and email: ${email}`);
-    // Clear fields
-    document.querySelector('#profile-name').value = '';
-    document.querySelector('#profile-email').value = '';
-    document.querySelector('#profile-bio').value = '';
+  event.preventDefault();
+  const name = document.querySelector('#profile-name').value.trim();
+
+  // Validate the name field
+  if (name === '') {
+      alert('Please enter your name.');
+      return;
+  }
+
+  const bio = document.querySelector('#profile-bio').value.trim();
+  alert(`Profile updated with name: ${name} and bio: ${bio}`);
+
+  // Clear fields
+  document.querySelector('#profile-name').value = '';
+  document.querySelector('#profile-bio').value = '';
 }
 
 // Upload File

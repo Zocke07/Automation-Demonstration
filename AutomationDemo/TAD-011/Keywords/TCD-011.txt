@@ -5,16 +5,11 @@ Resource    ../Variables.txt
 *** Keywords ***
 Input User Profile
     Input Name    ${updateName}
-    Input Email    ${updateEmail}
     Input Bio    ${updateBio}
 
 Input Name
     [Arguments]    ${name}
     Input Text    profile-name    ${name}
-
-Input Email
-    [Arguments]    ${email}
-    Input Text    profile-email    ${email}
 
 Input Bio
     [Arguments]    ${bio}
@@ -24,4 +19,4 @@ Click Update Profile Button
     Click Button    //input[@value='Update Profile']
 
 Verify Profile Is Updated
-    Alert Should Be Present    Profile updated with name: ${updateName} and email: ${updateEmail}
+    Alert Should Be Present    Profile updated with name: ${updateName} and bio: ${updateBio}
