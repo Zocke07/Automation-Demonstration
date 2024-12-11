@@ -37,3 +37,10 @@ This project aims to showcase the implementation of test automation in software 
 2. Install [RED (Robot Editor)](https://github.com/nokia/RED/releases/tag/0.9.5). RED Robot Editor is Eclipse based editor for RobotFramework test cases.
 
    > We used RED 0.9.5 on our demonstration
+
+
+## Team Members
+
+- 110590040 [徐釧龍](https://github.com/LuiseMichaelHsu)
+- 110590044 [黃家輝](https://github.com/Zocke07)
+- 110590069 [黃程義](https://github.com/LoDa02)

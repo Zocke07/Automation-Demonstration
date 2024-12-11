@@ -1,4 +1,5 @@
 *** Settings ***
+Library    SeleniumLibrary
 Resource    ../Resources/Core.txt
 Resource    Keywords/TestCases.txt
 
